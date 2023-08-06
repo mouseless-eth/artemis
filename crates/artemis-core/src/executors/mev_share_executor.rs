@@ -25,7 +25,7 @@ impl MevshareExecutor {
                     .map_err(transport::Error::Http)
                     .layer(FlashbotsSignerLayer::new(signer)),
             )
-            .build("https://relay.flashbots.net:443")
+            .build("https://relay-goerli.flashbots.net/")
             .expect("failed to build HTTP client");
         Self {
             mev_share_client: Box::new(http),
